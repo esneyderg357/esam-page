@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: datos-postgrado.html
+Noindex: /css/
+Noindex: /fonts/
+Noindex: /js/
+Noindex: datos-postgrado.html
+Sitemap: http://www.esam.edu.bo/sitemap.xml
