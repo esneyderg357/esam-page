@@ -1236,3 +1236,23 @@ img {
     font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */
+
+#map{
+	height: 300px;
+}
+
+.testimonials-area{
+	background-image: url(img/bg-img/bg-2.jpg);
+}
+
+#video{
+	width:100%;
+}
+
+.cta-content h5{
+	color: white;
+}
+.cta-content a{
+	color: white;
+	text-decoration: underline;
+}
