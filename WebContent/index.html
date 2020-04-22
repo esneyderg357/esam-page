@@ -68,8 +68,7 @@
                                 <a href="#"><img src="img/logo_esam_principal.png" width="200" alt=""></a>
                             </div>
                             <div class="login-content">
-                                <a href="#">Register / Login</a>
-                                <a href="moodle"><img src="img/icono_moodle.png" width="50" alt=""></a>
+                                <a href="moodle"><img src="img/icono_moodle.png" width="50" alt="" title="plataforma Moodle de ESAM"></a>
                             </div>
                         </div>
                     </div>
@@ -120,17 +119,15 @@
                                     <li><a href="#convenios">Convenios</a></li>
                                 </ul>
                             </div>
-                            <!-- Nav End -->
                         </div>
 
                         <!-- Calling Info -->
-                        <div class="calling-info">
-                            <div class="call-center">
+                        <div class="">
+                            <div class="call-center classynav">
                                <ul>
-                               <li><a href="#">TARIJA</a>
+                               <li><a href="#">{{splitsede(sedes[s].nombre)}}</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">SUCRE</a></li>
-                                            <li><a href="index.html">POTOSI</a></li>
+                                            <li><a href="#" v-for="(s,index) in sedes" v-if="index!=s" @click="cambiarsede(index)">{{splitsede(s.nombre)}}</a></li>
                                         </ul>
                                     </li>
                                </ul>
@@ -150,25 +147,17 @@
     </section>
     <!-- ##### Hero Area End ##### -->
     
-    <!-- ##### Top Feature Area Start ##### -->
+    <!-- ##### Top Feature Area Start ##### 
     <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-md-6 offset-md-3">
                     <div class="features-content">
-                        <div class="row no-gutters">
-                            <!-- Single Top Features -->
-                            <div class="col-12 col-md-6">
+                        <div class="row no-gutters">}
+                            <div class="col-12">
                                 <div class="single-top-features d-flex align-items-center justify-content-center">
                                     <i class="icon-agenda-1"></i>
-                                    <h5>Postgrados</h5>
-                                </div>
-                            </div>
-                            <!-- Single Top Features -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-top-features d-flex align-items-center justify-content-center">
-                                    <i class="icon-assistance"></i>
-                                    <h5>Cursos de formación</h5>
+                                    <h5>Centro de Postgrados</h5>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +166,7 @@
             </div>
         </div>
     </div>
-    <!-- ##### Top Feature Area End ##### -->
+     ##### Top Feature Area End ##### -->
     
     <!-- ##### Top Popular Courses Area Start ##### -->
     <div class="top-popular-courses-area section-padding-100-70" id="postgrados">
@@ -194,7 +183,7 @@
                 <!-- Single Top Popular Course -->
                 <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas">
                     <div class="card single-top-popular-course">
-					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"></a>
+					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap" @error="repararImg"></a>
 					  <div class="card-body text-center">
 					    <p class="card-text">
 					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
@@ -209,7 +198,7 @@
            <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
-                        <h3>Postgrados ESAM TARIJA</h3>
+                        <h3>Postgrados {{sedes[s].nombre}}</h3>
                     </div>
                 </div>
                 <div class="col-12">
@@ -237,9 +226,9 @@
             </div>
            <div class="row">
                 <!-- Single Top Popular Course -->
-                <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas">
+                <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas_sede">
                     <div class="card single-top-popular-course">
-					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"></a>
+					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"  @error="repararImg"></a>
 					  <div class="card-body text-center">
 					    <p class="card-text">
 					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
@@ -277,7 +266,7 @@
 	                                    	{{sedes[s].telefono2}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
 	                                </li>
 	                                <li>
-	                                    <h5><b class="fa fa-facebook"></b><a href="#">ESAM Sucre</a></h5>
+	                                    <h5><b class="fa fa-facebook"></b><a href="https://www.facebook.com/unsxxbolivia"> Esuela de negocios ESAM</a></h5>
 	                                </li>
 	                            </ul>
 	                        </div>
@@ -308,9 +297,9 @@
                             <img src="img/bg-img/t1.jpg" alt="">
                         </div>
                         <div class="testimonial-content">
-                            <h5>Great teachers</h5>
-                            <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                            <h6><span>Maria Smith,</span> Student</h6>
+                            <h5>Excelentes Docentes</h5>
+                            <p>Buena calidad académica de Docentes reconocidos a nivel Nacional</p>
+                            <h6><span>Pablo Cuba</span> Estudiante</h6>
                         </div>
                     </div>
                     <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="400ms">
@@ -318,9 +307,9 @@
                             <img src="img/bg-img/t1.jpg" alt="">
                         </div>
                         <div class="testimonial-content">
-                            <h5>Great teachers</h5>
-                            <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                            <h6><span>Maria Smith,</span> Student</h6>
+                            <h5>Buena atención</h5>
+                            <p>Información oportuna y muchas comodidades en los horarios y pagos, atención personalizada.</p>
+                            <h6><span>Sandra Arenas</span> Estudiante</h6>
                         </div>
                     </div>
                 </div>
@@ -358,16 +347,19 @@
     <!-- ##### Course Area Start ##### -->
     <div class="academy-courses-area section-padding-100-0"  id="convenios">
         <div class="container">
+        	<div class="row">
+        		<h3 class="text-center">Nuestros Convenios</h3>
+        	</div>
             <div class="row">
                 <!-- Single Course Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
                         <div class="course-icon">
-                            <i class="fa fa-university"></i>
+                            <img src="img/logo_unsxx.png" width="60">
                         </div>
                         <div class="course-content">
                             <h4>UNSXX</h4>
-                            <p>Convenio con la universidad púbilica</p>
+                            <p>Postgrados certificados por la Universidad Nacional Siglo XX</p>
                         </div>
                     </div>
                 </div>
@@ -375,11 +367,11 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
                         <div class="course-icon">
-                            <i class="fa fa-universit"></i>
+                            <img src="img/logo_fdpt.png" width="60">
                         </div>
                         <div class="course-content">
                             <h4>FDPT</h4>
-                            <p>Convenio Federación de profesionales</p>
+                            <p>Convenio con la Federación de Profesionales de Tarija</p>
                         </div>
                     </div>
                 </div>
@@ -387,50 +379,15 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
                         <div class="course-icon">
-                            <i class="fa fa-universit"></i>
+                            <img src="img/logo_ceub.png" width="60">
                         </div>
                         <div class="course-content">
-                            <h4>otro convenio</h4>
-                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
+                            <h4>CEUB</h4>
+                            <p>Nuestros postgrados son avalados por la CEUB</p>
                         </div>
                     </div>
                 </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="course-icon">
-                            <i class="icon-like"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>Social Media</h4>
-                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <div class="course-icon">
-                            <i class="icon-responsive"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>Development</h4>
-                            <p>Lacinia, lacinia la cus non, fermen tum nisi.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Course Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="800ms">
-                        <div class="course-icon">
-                            <i class="icon-message"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>Design</h4>
-                            <p>Cras vitae turpis lacinia, lacinia la cus non, fermentum nisi.</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -445,10 +402,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
-                        <a href="#"><img src="img/logo_fc.png" alt=""></a>
-                        <a href="#"><img src="img/logo_cca.png" alt=""></a>
-                        <a href="#"><img src="img/logo_cybercorp.png" alt=""></a>
-                        <a href="#"><img src="img/logo_ciberkids.png" alt=""></a>
+                        <a href="https://www.esamfc.com/"><img src="img/logo_fc.png" alt=""></a>
+                        <a href="https://www.cca.edu.bo/"><img src="img/logo_cca.png" alt=""></a>
+                        <a href="https://www.cybercorp.com.bo/"><img src="img/logo_cybercorp.png" alt=""></a>
+                        <a href="https://ciberkidstarija.wixsite.com/website"><img src="img/logo_ciberkids.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -475,15 +432,15 @@
 </div>
 
     <!-- ##### All Javascript Script ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <script src="js/bootstrap/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/plugins/plugins.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
     <script src="js/simple-lightbox.min.js"></script>
-	<script src="js/vue.js"></script>
-	<script src="js/axios.js"></script>
 	<script src="js/moment.min.js"></script>
 	<script src="js/moment-es.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/axios.js"></script>
     <script src="js/main.js"></script>
     <script src="js/index.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOAO9oWWZN1fOVHBaWP1vHAnTfU4zRV4Q"></script>

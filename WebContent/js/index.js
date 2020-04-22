@@ -1,4 +1,5 @@
-const SERVER='https://apiesamweb.esamcca.com/graphql';
+//const SERVER='https://apiesamweb.esamcca.com/graphql';
+const SERVER='https://webapi.esamcca.com/graphql';
 document.addEventListener('DOMContentLoaded', function() {
 	 app=new Vue({
 	    	el:'#app',
@@ -7,8 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	    		s:0,
 	    		programas:[],
 	    		programas_menu:[],
+	    		programas_sede:[],
 	    		areas:[],
 	    		categorias:[],
+	    		idcategoria: 1,
+	    		idarea:1,
 	    		galeria:[{foto:'e1.jpg',descripcion:'Diplomado en emergencias médicas'},
 	    				{foto:'e2.jpg',descripcion:'Maestría en recursos humanos'},
 	    				{foto:'e4.jpg',descripcion:'Diplomado en ciencias forenses'},
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	    				lista = res.data.data.programas;
 	    				lista.pop();
 	    				this.programas = lista;
+	    				repararImg();
 	    			}).catch((error)=>{
 	    				//n_error(error);
 	    			}).finally(function () {
@@ -97,6 +102,37 @@ document.addEventListener('DOMContentLoaded', function() {
 	    				//global.commit('cargar',false);
 	    			});
 	    		},
+	    		cargar:function(){
+	    			axios.post(SERVER, {
+	    				query:`query{
+								  programas(latest:true,por_fecha:false,idsede:`+this.sedes[this.s].id+`,categoria:`+this.idcategoria+`,area:`+this.idarea+`){
+								    id,postgrado{nombre,categoria{nombre}},version,grupo,fecha_inicio,arte,portada,sede{nombre}
+								  }
+								}`
+	    			}).then((res)=> {
+	    				datos=res.data.data.programas;
+	    				this.programas_sede=datos;
+	    				repararImg();
+	    			}).catch((error)=>{
+	    				//n_error(error);
+	    			}).finally(()=> {
+	    				//global.commit('cargar',false);
+	    				this.activo=true;
+	    			});
+	    		},
+	    		cambiarcategoria:function(id){
+	    			this.idcategoria=id;
+	    			this.cargar();
+	    		},
+	    		cambiararea:function(id){
+	    			this.idarea=id;
+	    			this.cargar();
+	    		},
+	    		cambiarsede:function(idx){
+	    			this.s=idx;
+	    			this.cargar();
+	    			this.initMaps();
+	    		},
 	    		initMaps:function(){
 	    				map=new google.maps.Map(document.getElementById('map'), {
 	        		        center: {lat: this.sedes[this.s].latitud, lng: this.sedes[this.s].longitud},
@@ -110,6 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	    		},
 	    		format:function(date){
 	    			return moment(parseInt(date)).format('DD/MM/YYYY');
+	    		},
+	    		repararImg:function(event){
+	    			event.target.src ='webdata/portadas/postgrado_default.png';
+	    		},
+	    		splitsede:function(name){
+	    			array=name.split(' ');
+	    			array.shift();
+	    			return array.join(' ');
 	    		}
 	    	},
 	    	mounted(){

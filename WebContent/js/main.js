@@ -95,6 +95,7 @@ function ready() {
             topSpacing: 0
         });
     }
+    
     //efecto nieve para navidad:
     //$(document).snowfall({collection : '.socialbar',shadow : true, round : true,  minSize: 5, maxSize:12,flakeCount : 35, maxSpeed : 10});
 }

@@ -3,7 +3,7 @@
 }
 
 .classynav ul li.megamenu-item>a:after, .icon-down-arrow:before {
-	content: "\e900"
+	content: "\f078"
 }
 
 * {
@@ -156,12 +156,6 @@ img {
 }
 
 @font-face {
-	font-family: icomoon;
-	src: url(../fonts/classy.eot?fftrrv);
-	src: url(../fonts/classy.eot?fftrrv#iefix) format("embedded-opentype"),
-		url(../fonts/classy.ttf?fftrrv) format("truetype"),
-		url(../fonts/classy.woff?fftrrv) format("woff"),
-		url(../fonts/classy.svg?fftrrv#icomoon) format("svg");
 	font-weight: 400;
 	font-style: normal
 }
@@ -179,7 +173,7 @@ img {
 }
 
 .classynav ul li.megamenu-item>a:after {
-	font-family: icomoon !important;
+	font-family: FontAwesome !important;
 	font-size: 11px;
 	color: #000;
 	padding-left: 5px

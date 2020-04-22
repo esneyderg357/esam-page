@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>ESAM POSTGRADOS</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+	<div id="fb-root"></div>
+	<!-- Load Facebook SDK for JavaScript -->
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				xfbml : true,
+				version : 'v4.0'
+			});
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat" attribution=setup_tool
+		page_id="1926281687645459" theme_color="#2054ce"
+		logged_in_greeting="Hola, ¿en que le podemos ayudar?"
+		logged_out_greeting="Gracias por visitarnos, hasta luego">
+	</div>
+	
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+    
+<div id="app">
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="#"><img src="img/logo_esam_principal.png" width="200" alt=""></a>
+                            </div>
+                            <div class="login-content">
+                                <a href="#">Register / Login</a>
+                                <a href="moodle"><img src="img/icono_moodle.png" width="50" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="index.html">Postgrados</a>
+                                        <div class="megamenu">
+                                            <ul class="single-mega cn-col-6">
+                                                <li ><a href="#">Diplomado</a></li>
+                                                <li ><a href="#">Diplomado</a></li>
+                                                <li ><a href="#">Diplomado</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-6">
+                                                <li ><a href="#">Maestría</a></li>
+                                                <li ><a href="#">Maestría</a></li>
+                                                <li ><a href="#">Maestría</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#contact">Contacto</a></li>
+                                    <li><a href="index.html#about">Conócenos</a></li>
+                                    <li><a href="index.html#convenios">Convenios</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Calling Info -->
+                        <div class="">
+                            <div class="call-center classynav">
+                               <ul>
+                               <li><a href="#">{{programa.sede.nombre}}</a></li>
+                               </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+    
+    <!-- ##### CTA Area Start ##### -->
+    <div class="call-to-action-area" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                      		<div class="cta-content">
+	                        	<h3>{{programa.sede.nombre}}</h3>
+	                            <ul class="info">
+	                            	<li>
+	                                	<h5><b class="fa fa-university"></b>{{programa.sede.direccion}}</h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-phone"></b>{{programa.sede.telefono_fijo}}</h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-mobile"></b>
+	                                    <a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono1+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                    	{{programa.sede.telefono1}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
+	                                	<h5><b class="fa fa-mobile"></b>
+	                                	<a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono2+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                    	{{programa.sede.telefono2}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-facebook"></b><a href="https://www.facebook.com/unsxxbolivia"> Esuela de negocios ESAM</a></h5>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-12 col-md-6">
+	                    	<div class="map" id="map"></div>
+	                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### CTA Area End ##### -->
+
+    <!-- ##### Partner Area Start ##### -->
+    <div class="partner-area section-padding-0-100">
+        <div class="container">
+        	<div class="row">
+        		<h3 class="text-center">Nuestra corporación</h3>
+        	</div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
+                        <a href="https://www.esamfc.com/"><img src="img/logo_fc.png" alt=""></a>
+                        <a href="https://www.cca.edu.bo/"><img src="img/logo_cca.png" alt=""></a>
+                        <a href="https://www.cybercorp.com.bo/"><img src="img/logo_cybercorp.png" alt=""></a>
+                        <a href="https://ciberkidstarija.wixsite.com/website"><img src="img/logo_ciberkids.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Partner Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="bottom-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Desarrollado por ESAM
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+</div>
+
+    <!-- ##### All Javascript Script ##### -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/simple-lightbox.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/moment-es.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/axios.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOAO9oWWZN1fOVHBaWP1vHAnTfU4zRV4Q"></script>
+	<script async defer crossorigin="anónimo" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+</body>
+
+</html>
