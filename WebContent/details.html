@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -68,8 +68,7 @@
                                 <a href="#"><img src="img/logo_esam_principal.png" width="200" alt=""></a>
                             </div>
                             <div class="login-content">
-                                <a href="#">Register / Login</a>
-                                <a href="moodle"><img src="img/icono_moodle.png" width="50" alt=""></a>
+                                <a href="https://esam.edu.bo/moodle"><img src="img/icono_moodle.png" width="50" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -100,8 +99,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="#">Inicio</a></li>
-                                    <li><a href="index.html">Postgrados</a>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="index.html#postgrados">Postgrados</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-6">
                                                 <li ><a href="#">Diplomado</a></li>
@@ -117,7 +116,7 @@
                                     </li>
                                     <li><a href="#contact">Contacto</a></li>
                                     <li><a href="index.html#about">Conócenos</a></li>
-                                    <li><a href="index.html#convenios">Convenios</a></li>
+                                    <li><a href="#convenios">Convenios</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -137,6 +136,43 @@
     </header>
     <!-- ##### Header Area End ##### -->
     
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area section-padding-100-70" id="postgrados">
+        <div class="container">
+            <div class="row">
+               <div class="col-12 col-md-6">
+               		<div class="academy-blog-posts">
+                        <div class="row">
+
+                            <!-- Single Blog Start -->
+                            <div class="col-12">
+                                <div class="single-blog-post mb-50 wow fadeInUp" data-wow-delay="300ms">
+                                    <!-- Post Title -->
+                                    <a href="#" class="post-title text-center"><h3>{{programa.postgrado.categoria.nombre}} en {{programa.postgrado.nombre}}</h3></a>
+                                    <!-- Post Excerpt -->
+                                    <h6 class="mt-5">OBJETIVO</h6>
+			                        <p>{{programa.postgrado.objetivo}}</p>
+			                        <div class="mt-5">
+			                            <h6><span class="fa fa-university"></span> {{programa.universidad.nombre}}</h6>
+			                            <h6><span class="fa fa-tags"></span> Duración: <span v-if="programa.postgrado.duracion">{{programa.postgrado.duracion}} meses</span><span v-else>---</span></h6>
+			                            <h6><span class="fa fa-clock-o"></span> <span v-if="programa.postgrado.creditaje">{{programa.postgrado.creditaje}}</span><span v-else>---</span> Horas académicas</h6>
+			                            <h6><span class="fa fa-calendar"></span> Inicio: <span v-if="programa.fecha_inicio">{{format(programa.fecha_inicio)}}</span><span v-else>---</span></h6>
+			                    	</div>
+                                    <h6 class="mt-5">DIRIGIDO A</h6>
+			                        <p>{{programa.postgrado.dirigido}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="col-12 col-md-6">
+               		<img class="card-img-top" :src="'webdata/portadas/'+programa.portada" alt="Card image cap"  @error="repararImg">
+               </div>
+           </div>
+    	</div>           
+    </div>
+    <!-- ##### Top Popular Courses Area End ##### -->
+    
     
     <!-- ##### CTA Area Start ##### -->
     <div class="call-to-action-area" id="contact">
@@ -154,10 +190,10 @@
 	                                </li>
 	                                <li>
 	                                    <h5><b class="fa fa-mobile"></b>
-	                                    <a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono1+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                    <a :href="'https://api.whatsapp.com/send?phone=591'+programa.sede.telefono1+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
 	                                    	{{programa.sede.telefono1}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
 	                                	<h5><b class="fa fa-mobile"></b>
-	                                	<a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono2+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                	<a :href="'https://api.whatsapp.com/send?phone=591'+programa.sede.telefono2+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
 	                                    	{{programa.sede.telefono2}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
 	                                </li>
 	                                <li>
@@ -173,6 +209,55 @@
         </div>
     </div>
     <!-- ##### CTA Area End ##### -->
+    
+    <!-- ##### Course Area Start ##### -->
+    <div class="academy-courses-area section-padding-100-0"  id="convenios">
+        <div class="container">
+        	<div class="row">
+        		<h3 class="text-center">Nuestros Convenios</h3>
+        	</div>
+            <div class="row">
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="course-icon">
+                            <img src="img/logo_unsxx.png" width="60">
+                        </div>
+                        <div class="course-content">
+                            <h4>UNSXX</h4>
+                            <p>Postgrados certificados por la Universidad Nacional Siglo XX</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="course-icon">
+                            <img src="img/logo_fdpt.png" width="60">
+                        </div>
+                        <div class="course-content">
+                            <h4>FDPT</h4>
+                            <p>Convenio con la Federación de Profesionales de Tarija</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="course-icon">
+                            <img src="img/logo_ceub.png" width="60">
+                        </div>
+                        <div class="course-content">
+                            <h4>CEUB</h4>
+                            <p>Nuestros postgrados son avalados por la CEUB</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- ##### Course Area End ##### -->
 
     <!-- ##### Partner Area Start ##### -->
     <div class="partner-area section-padding-0-100">
@@ -217,13 +302,12 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/simple-lightbox.min.js"></script>
 	<script src="js/moment.min.js"></script>
 	<script src="js/moment-es.js"></script>
 	<script src="js/vue.js"></script>
 	<script src="js/axios.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/details.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOAO9oWWZN1fOVHBaWP1vHAnTfU4zRV4Q"></script>
 	<script async defer crossorigin="anónimo" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 </body>

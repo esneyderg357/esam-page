@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -68,7 +68,7 @@
                                 <a href="#"><img src="img/logo_esam_principal.png" width="200" alt=""></a>
                             </div>
                             <div class="login-content">
-                                <a href="moodle"><img src="img/icono_moodle.png" width="50" alt="" title="plataforma Moodle de ESAM"></a>
+                                <a href="https://esam.edu.bo/moodle"><img src="img/icono_moodle.png" width="50" alt="" title="plataforma Moodle de ESAM"></a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                 <!-- Single Top Popular Course -->
                 <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas">
                     <div class="card single-top-popular-course">
-					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap" @error="repararImg"></a>
+					  <a :href="'details.html?id='+p.id"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap" @error="repararImg"></a>
 					  <div class="card-body text-center">
 					    <p class="card-text">
 					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
@@ -228,7 +228,7 @@
                 <!-- Single Top Popular Course -->
                 <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas_sede">
                     <div class="card single-top-popular-course">
-					  <a href="#"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"  @error="repararImg"></a>
+					  <a :href="'details.html?id='+p.id"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"  @error="repararImg"></a>
 					  <div class="card-body text-center">
 					    <p class="card-text">
 					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
