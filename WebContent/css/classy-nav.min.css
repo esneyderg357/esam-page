@@ -674,9 +674,6 @@ img {
 		{
 		display: none
 	}
-	.classynav {
-		padding-top: 70px
-	}
 	.classynav ul li .megamenu {
 		position: relative;
 		width: 100%;
@@ -786,10 +783,6 @@ img {
 .breakpoint-on .classynav ul li .dropdown, .breakpoint-on .classynav ul li .megamenu,
 	.breakpoint-on .classynav ul li.megamenu-item>a:after {
 	display: none
-}
-
-.breakpoint-on .classynav {
-	padding-top: 70px
 }
 
 .breakpoint-on .classynav ul li .megamenu {

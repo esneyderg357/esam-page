@@ -256,13 +256,13 @@ img {
   background: -webkit-linear-gradient(to right, #062E4E, #637C90);
   background: linear-gradient(to right, #062E4E, #637C90);
   border-radius: 0;
-  bottom: 60px;
+  bottom: 100px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 24px;
   height: 40px;
   line-height: 40px;
-  right: 60px;
+  right: 30px;
   text-align: center;
   width: 40px;
   -webkit-transition-duration: 500ms;
@@ -271,7 +271,7 @@ img {
     background-color: #141414; }
   @media only screen and (max-width: 767px) {
     #scrollUp {
-      bottom: 30px;
+      bottom: 90px;
       right: 30px; } }
 
 /* Essence Button */
@@ -1254,4 +1254,7 @@ img {
 .cta-content a{
 	color: white;
 	text-decoration: underline;
+}
+.white{
+	color: white;
 }

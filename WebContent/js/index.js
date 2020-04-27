@@ -1,4 +1,3 @@
-//const SERVER='https://apiesamweb.esamcca.com/graphql';
 const SERVER='https://webapi.esamcca.com/graphql';
 document.addEventListener('DOMContentLoaded', function() {
 	 app=new Vue({
@@ -16,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	    		galeria:[{foto:'e1.jpg',descripcion:'Diplomado en emergencias médicas'},
 	    				{foto:'e2.jpg',descripcion:'Maestría en recursos humanos'},
 	    				{foto:'e4.jpg',descripcion:'Diplomado en ciencias forenses'},
-	    				{foto:'e5.jpg',descripcion:''},
-	    				{foto:'e6.jpg',descripcion:''},
-	    				{foto:'e7.jpg',descripcion:''},
-	    				{foto:'e9.jpg',descripcion:'Maestria en instrumentación Quirúrgica'},
+	    				{foto:'e5.jpg',descripcion:'Maestría en Administración Financiera'},
+	    				{foto:'e6.jpg',descripcion:'Maestría en Ingeniería Estructural'},
+	    				{foto:'e7.jpg',descripcion:'Diplomado en Educación Superior'},
+	    				{foto:'e9.jpg',descripcion:'Diplomado en instrumentación Quirúrgica'},
 	    				{foto:'e10.jpg',descripcion:'Maestría en Derecho Notarial'},
 	    				{foto:'e11.jpg',descripcion:'Maestría en Derecho Procesal Penal'},
 	    				{foto:'e12.jpg',descripcion:'Maestría en Ingeniería Vial'}]

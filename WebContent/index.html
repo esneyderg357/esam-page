@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="Centro de postgrados">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -127,7 +127,7 @@
                                <ul>
                                <li><a href="#">{{splitsede(sedes[s].nombre)}}</a>
                                         <ul class="dropdown">
-                                            <li><a href="#" v-for="(s,index) in sedes" v-if="index!=s" @click="cambiarsede(index)">{{splitsede(s.nombre)}}</a></li>
+                                            <li><a v-for="(s,index) in sedes" v-if="index!=s" @click="cambiarsede(index)" style="cursor:pointer;">{{splitsede(s.nombre)}}</a></li>
                                         </ul>
                                     </li>
                                </ul>
@@ -181,7 +181,7 @@
             <div class="row">
                
                 <!-- Single Top Popular Course -->
-                <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" v-for="(p,index) in programas">
                     <div class="card single-top-popular-course">
 					  <a :href="'details.html?id='+p.id"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap" @error="repararImg"></a>
 					  <div class="card-body text-center">
@@ -210,15 +210,15 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-lg-6 mb-2">
-               	 	<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					  <label v-for="(a,index) in areas" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiararea(a.id)">
+               	 	<div class="btn-toolbar btn-group-toggle" data-toggle="buttons">
+					  <label v-for="(a,index) in areas" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiararea(a.id)" style="border-radius:0;">
 					    <input type="radio" name="area" autocomplete="off" v-model="idarea" :value="a.id" :checked="index==0">{{a.nombre}} 
 					  </label>
 					</div>
                 </div>
                 <div class="col-xs-12 col-lg-6 mb-2">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-					  <label v-for="(c,index) in categorias" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiarcategoria(c.id)">
+                    <div class="btn-toolbar btn-group-toggle" data-toggle="buttons" >
+					  <label v-for="(c,index) in categorias" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiarcategoria(c.id)" style="border-radius:0;">
 					    <input type="radio" name="categoria" autocomplete="off" v-model="idcategoria" :value="c.id" :checked="index==0"> {{c.nombre}}  
 					  </label>
 					</div>
@@ -267,6 +267,12 @@
 	                                </li>
 	                                <li>
 	                                    <h5><b class="fa fa-facebook"></b><a href="https://www.facebook.com/unsxxbolivia"> Esuela de negocios ESAM</a></h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-instagram"></b><a href="https://www.instagram.com/esambolivia"> ESAM Bolivia</a></h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-youtube"></b><a href="https://www.youtube.com/channel/UCPOdS0I1yv0gNvKyUhxKUsg"> Escuela de Negocios ESAM</a></h5>
 	                                </li>
 	                            </ul>
 	                        </div>
@@ -334,11 +340,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                   <h3>Generando experiencias...</h3>
+                   <h3 class="white">Generando experiencias...</h3>
                 </div>
             </div>
             <div class="gallery">
-				<a v-for="g in galeria" :href="'webdata/galeria/'+g.foto"><img :src="'webdata/galeria/thumbs/'+g.foto" :alt="g.descripcion" :title="g.descripcion" width="200" height="200"/></a>
+				<a v-for="g in galeria" :href="'webdata/galeria/'+g.foto"><img :src="'webdata/galeria/thumbs/'+g.foto" :alt="g.descripcion" :title="g.descripcion" width="180" height="180"/></a>
 			</div>
         </div>
     </div>
@@ -347,18 +353,18 @@
     <!-- ##### Course Area Start ##### -->
     <div class="academy-courses-area section-padding-100-0"  id="convenios">
         <div class="container">
-        	<div class="row">
-        		<h3 class="text-center">Nuestros Convenios</h3>
+        	<div class="row mb-3">
+        		<div  class="col-md-12 text-center"><h3>Nuestros Convenios</h3></div>
         	</div>
             <div class="row">
                 <!-- Single Course Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="course-icon">
-                            <img src="img/logo_unsxx.png" width="60">
+                        <div class="mr-3">
+                            <img src="img/logo_unsxx.png" width="80">
                         </div>
                         <div class="course-content">
-                            <h4>UNSXX</h4>
+                            <a href="http://unsxx.edu.bo/"><h4>UNSXX</h4></a>
                             <p>Postgrados certificados por la Universidad Nacional Siglo XX</p>
                         </div>
                     </div>
@@ -366,11 +372,11 @@
                 <!-- Single Course Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="course-icon">
-                            <img src="img/logo_fdpt.png" width="60">
+                        <div class="mr-3">
+                            <img src="img/logo_fdpt.png" width="100">
                         </div>
                         <div class="course-content">
-                            <h4>FDPT</h4>
+                            <a href="https://www.facebook.com/FederacionDepartamentaldeProfesionalesTarija"><h4>FDPT</h4></a>
                             <p>Convenio con la Federación de Profesionales de Tarija</p>
                         </div>
                     </div>
@@ -378,11 +384,11 @@
                 <!-- Single Course Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="course-icon">
-                            <img src="img/logo_ceub.png" width="60">
+                        <div class="mr-3">
+                            <img src="img/logo_ceub.png" width="80">
                         </div>
                         <div class="course-content">
-                            <h4>CEUB</h4>
+                            <a href="http://www.ceub.edu.bo/"><h4>CEUB</h4></a>
                             <p>Nuestros postgrados son avalados por la CEUB</p>
                         </div>
                     </div>
@@ -396,8 +402,8 @@
     <!-- ##### Partner Area Start ##### -->
     <div class="partner-area section-padding-0-100">
         <div class="container">
-        	<div class="row">
-        		<h3 class="text-center">Nuestra corporación</h3>
+        	<div class="row mb-3">
+        		<div  class="col-md-12 text-center"><h3>Nuestra corporación</h3></div>
         	</div>
             <div class="row">
                 <div class="col-12">
@@ -419,7 +425,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Desarrollado por ESAM
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
