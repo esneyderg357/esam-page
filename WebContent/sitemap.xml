@@ -6,10 +6,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.esam.edu.bo/postgrados.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>http://www.esam.edu.bo/?menu=service-area</loc>
     <priority>0.5</priority>
   </url>
@@ -22,7 +18,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.esam.edu.bo/moodle</loc>
+    <loc>http://www.esam.edu.bo/moodle/login/index.php</loc>
     <priority>0.5</priority>
   </url>
 </urlset>

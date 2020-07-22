@@ -1,12 +1,13 @@
 /* [Master Stylesheet v1.0] */
 /* :: 2.0 Import All CSS */
-@import url(css/bootstrap.min.css);
-@import url(css/owl.carousel.min.css);
-@import url(css/animate.css);
-@import url(css/magnific-popup.css);
-@import url(css/font-awesome.min.css);
-@import url(css/classy-nav.min.css);
-@import url(css/simplelightbox.min.css);
+@import url(bootstrap.min.css);
+@import url(owl.carousel.min.css);
+@import url(animate.css);
+@import url(magnific-popup.css);
+@import url(font-awesome.min.css);
+@import url(classy-nav.min.css);
+@import url(simplelightbox.min.css);
+@import url(bootstrap-select.min.css);
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
@@ -140,7 +141,6 @@ img {
 .section-heading {
   position: relative;
   z-index: 1;
-  max-width: 600px;
   margin-bottom: 80px !important; }
   .section-heading span {
     color: #606060;
@@ -223,7 +223,7 @@ img {
   background-position: center center;
   background-size: cover; }
   .bg-overlay::after {
-    background-color: rgba(0, 0, 0, 0.88);
+    background-color: rgba(0, 0, 0, 0.65);
     position: absolute;
     z-index: -1;
     top: 0;
@@ -788,7 +788,7 @@ img {
   background: #61ba6d;
   background: -webkit-linear-gradient(to right, #062E4E, #637C90);
   background: linear-gradient(to right, #062E4E, #637C90);
-  padding: 70px 0; }
+  padding: 100px 0; }
   .call-to-action-area .cta-content h3 {
     font-size: 30px;
     color: #ffffff;
@@ -1237,15 +1237,32 @@ img {
 /*# sourceMappingURL=style.css.map */
 
 #map{
-	height: 300px;
+	height: 320px;
 }
 
 .testimonials-area{
-	background-image: url(img/bg-img/bg-2.jpg);
+	background-image: url(../img/bg-img/bg-2.jpg);
 }
+.video-container{
+	position: absolute; 
+    top: 0; left:0;
+    width: 100%; height: 100%; 
+    z-index: -1;
+}
+#aaavideo{
+	min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 
-#video{
-	width:100%;
+  position: fixed;    
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); 
+      
+  z-index: -100;
+    
+  background-size: cover;
 }
 
 .cta-content h5{
@@ -1258,3 +1275,10 @@ img {
 .white{
 	color: white;
 }
+.ancla:before {       
+  display: block;       
+  content: " ";
+  width:100%;      
+  height: 120px;       
+  visibility: hidden; 
+} 
